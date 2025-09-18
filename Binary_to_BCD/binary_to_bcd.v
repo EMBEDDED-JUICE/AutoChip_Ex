@@ -1,13 +1,20 @@
-//I am trying to create a Verilog model binary_to_bcd_converter for a binary to binary-coded-decimal converter. It must meet the following specifications:
-//	- Inputs:
-//		- Binary input (5-bits)
-//	- Outputs:
-//		- BCD (8-bits: 4-bits for the 10's place and 4-bits for the 1's place)
+You are generating synthesizable Verilog-2001.  
+Output ONLY one code block with NO markdown fences, NO prose, and nothing outside the module.
 
-//How would I write a design that meets these specifications?
+Write a Verilog-2001 module with the following exact specification:
 
-module binary_to_bcd_converter (
-    input  [4:0] bin_in,   // 5-bit binary input (0-31 decimal)
-    output [7:0] bcd_out   // 8-bit BCD output: [7:4]=tens, [3:0]=ones
-);
-//Insert your code here
+Module name:
+binary_to_bcd_converter
+
+Ports:
+- input  [4:0] binary_input   // 5-bit binary input (0–31)
+- output [7:0] bcd_output     // 8-bit BCD: [7:4] = tens, [3:0] = ones
+
+Requirements:
+- Inside the always @(*) block, compute:
+  tens = binary_input / 10;
+  ones = binary_input % 10;
+- Concatenate tens and ones into bcd_output = {tens, ones}.
+- Use regs for tens and ones, wires where appropriate.
+- Ensure full coverage for 0–31 input range.
+- End with `endmodule` and nothing else.
