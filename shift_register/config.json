@@ -2,7 +2,7 @@
 	"general": {
         "prompt": "./shift_register.v",
         "name": "top_module",
-        "testbench": "./shift_register.v",
+        "testbench": "./shift_register_tb.v",
 		"model_family": "ChatGPT",
 		"model_id": "gpt-4o-mini",
 		"num_candidates": 5,
